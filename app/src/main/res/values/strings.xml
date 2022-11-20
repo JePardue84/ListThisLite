@@ -12,4 +12,16 @@
     <string name="add">Add Inventory</string>
     <string name="updateInventory">Update Inventory</string>
     <string name="deleteInventory">Delete Inventory</string>
+    <string name="list">List</string>
+    <string name="back_to_menu">Back To Menu</string>
+    <string name="your_inventory">Your Inventory</string>
+    <string name="username_text">Username</string>
+    <string name="title_this">This!</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login_button">Login</string>
+    <string name="password_text">Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
 </resources>

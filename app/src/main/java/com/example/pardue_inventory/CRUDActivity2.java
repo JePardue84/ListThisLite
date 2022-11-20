@@ -38,7 +38,7 @@ public class CRUDActivity2 extends AppCompatActivity {
                     startActivity(look);
                     break;
                 case R.id.AddInventory:
-                    Intent add = new Intent(CRUDActivity2.this, CRUDActivity2.class);
+                    Intent add = new Intent(CRUDActivity2.this, AddActivity2.class);
                     startActivity(add);
                     break;
                 case R.id.UpdateInventory:
@@ -46,7 +46,7 @@ public class CRUDActivity2 extends AppCompatActivity {
                     startActivity(update);
                     break;
                 case R.id.DeleteInventory:
-                    Intent delete = new Intent(CRUDActivity2.this, CRUDActivity2.class);
+                    Intent delete = new Intent(CRUDActivity2.this, DeleteActivity2.class);
                     startActivity(delete);
                     break;
                 case R.id.Logout:

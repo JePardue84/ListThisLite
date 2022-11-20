@@ -2,7 +2,6 @@ package com.example.pardue_inventory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 
-public class GridActivity3 extends AppCompatActivity {
+public class AddActivity2 extends AppCompatActivity {
+
     private Button backView;
     GridView gridview;
     String[] number = new String[200];
@@ -19,12 +19,12 @@ public class GridActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid3);
+        setContentView(R.layout.activity_add2);
         backView = findViewById(R.id.Backview);
         backView.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GridActivity3.this, CRUDActivity2.class);
+                Intent intent = new Intent(AddActivity2.this, CRUDActivity2.class);
                 startActivity(intent);
             }
         });
@@ -35,7 +35,7 @@ public class GridActivity3 extends AppCompatActivity {
         }
 
         gridview = (GridView) findViewById(R.id.gridView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,number);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>( this, android.R.layout.simple_selectable_list_item,number);
         gridview.setAdapter(adapter);
 
     }

@@ -21,32 +21,30 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="171dp"
-        android:layout_height="35dp"
-        android:fontFamily="serif"
-        android:text="@string/your_inventory"
-        android:textAlignment="center"
-        android:textColor="#8F3985"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
-
     <GridView
-        android:layout_width="390dp"
-        android:layout_height="574dp"
         android:id="@+id/gridView"
+        android:layout_width="371dp"
+        android:layout_height="546dp"
         android:numColumns="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.567" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="234dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#F40404"
+        android:drawableStart="@drawable/ic_baseline_delete_24"
+        android:text="Delete Selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
