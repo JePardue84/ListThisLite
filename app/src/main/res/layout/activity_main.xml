@@ -29,12 +29,13 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_corners"
+        android:padding="15dp"
         android:drawableRight="@drawable/ic_baseline_person_24"
         android:ems="10"
         android:fontFamily="sans-serif-black"
         android:inputType="textPersonName"
         android:singleLine="true"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textColor="#4AE3B5"
         android:textSize="14sp"
         android:visibility="visible"
@@ -50,6 +51,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_corners"
+        android:padding="15dp"
         android:drawableRight="@drawable/ic_baseline_lock_24"
         android:ems="10"
         android:fontFamily="sans-serif-black"
@@ -65,12 +67,12 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <Button
-        android:id="@+id/Move1"
+        android:id="@+id/Login"
         android:layout_width="130dp"
         android:layout_height="69dp"
         android:backgroundTint="#2A5D67"
         android:fontFamily="cursive"
-        android:text="Sign In"
+        android:text="Login"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,41 +84,24 @@
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="139dp"
-        android:layout_height="26dp"
+        android:layout_width="148dp"
+        android:layout_height="29dp"
         android:text="Remember Me"
         android:textColor="#171332"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.472" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:drawableStart="@drawable/ic_baseline_lock_open_24"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Forget Password"
-        android:textAlignment="center"
-        android:textColor="#171332"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/SignUp"
         android:layout_width="190dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#2A5D67"
         android:fontFamily="cursive"
         android:text="Sign Up"
@@ -127,7 +112,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Move1" />
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.932" />
 
     <TextView
         android:id="@+id/textView"
@@ -168,5 +154,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="153dp"
+        android:layout_height="27dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_baseline_lock_open_24"
+        android:padding="5dp"
+        android:text="Forget Password"
+        android:textAllCaps="false"
+        android:textColor="#171332"
+        android:textColorHighlight="@color/purple_700"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

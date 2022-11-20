@@ -3,4 +3,13 @@
     <string name="create">Create</string>
     <string name="login">Login</string>
     <string name="log_out">Log Out</string>
+    <string name="logout">Log Out</string>
+    <string name="question">What would you like to do?</string>
+    <string name="delete">Delete Inventory Item</string>
+    <string name="add_inventory">Add to Inventory</string>
+    <string name="update">Update Inventory Item</string>
+    <string name="view">View Inventory</string>
+    <string name="add">Add Inventory</string>
+    <string name="updateInventory">Update Inventory</string>
+    <string name="deleteInventory">Delete Inventory</string>
 </resources>

@@ -8,84 +8,85 @@
     tools:context=".CRUDActivity2">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Logout"
         android:layout_width="110dp"
-        android:layout_height="34dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/teal_200"
-        android:text="Log Out"
-        android:textColor="#285D67"
-        android:textSize="10sp"
+        android:text="@string/logout"
+        android:textColor="#37474F"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.944" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="202dp"
-        android:layout_height="28dp"
+        android:id="@+id/Question"
+        android:layout_width="228dp"
+        android:layout_height="29dp"
         android:fontFamily="cursive"
-        android:text="What do you want to do?"
+        android:text="@string/question"
+        android:textColor="#171332"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.203" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/AddInventory"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:backgroundTint="#2A5D67"
-        android:text="Add to List"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/View"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="View List"
         android:backgroundTint="#2A5D67"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:text="@string/view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/UpdateInventory"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:backgroundTint="#2A5D67"
-        android:text="Update List Item"
+        android:text="@string/updateInventory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.594" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/DeleteInventory"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:backgroundTint="#2A5D67"
-        android:text="Delete List Item"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/deleteInventory"
+        app:layout_constraintBottom_toTopOf="@+id/Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
 </androidx.constraintlayout.widget.ConstraintLayout>

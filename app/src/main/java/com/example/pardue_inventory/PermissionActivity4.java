@@ -5,22 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class PermissionActivity4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_permission4);
 
         defineButtons();
     }
 
     private void defineButtons() {
 
-        findViewById(R.id.Login).setOnClickListener(buttonClickListener);
-        findViewById(R.id.SignUp).setOnClickListener(buttonClickListener);
+        findViewById(R.id.Deny).setOnClickListener(buttonClickListener);
+        findViewById(R.id.Allow).setOnClickListener(buttonClickListener);
 
     }
 
@@ -28,18 +27,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.Login:
-                    Intent look = new Intent(MainActivity.this, PermissionActivity4.class);
+                case R.id.Deny:
+                    Intent look = new Intent(PermissionActivity4.this, CRUDActivity2.class);
                     startActivity(look);
                     break;
-                case R.id.SignUp:
-                    Intent logout = new Intent(MainActivity.this, MainActivity.class);
+                case R.id.Allow:
+                    Intent logout = new Intent(PermissionActivity4.this, CRUDActivity2.class);
                     startActivity(logout);
                     break;
             }
-
         }
-
     };
 
 }
