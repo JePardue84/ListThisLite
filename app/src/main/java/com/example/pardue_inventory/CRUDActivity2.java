@@ -42,7 +42,7 @@ public class CRUDActivity2 extends AppCompatActivity {
                     startActivity(add);
                     break;
                 case R.id.UpdateInventory:
-                    Intent update = new Intent(CRUDActivity2.this, CRUDActivity2.class);
+                    Intent update = new Intent(CRUDActivity2.this, UpdateActivity2.class);
                     startActivity(update);
                     break;
                 case R.id.DeleteInventory:

@@ -24,4 +24,6 @@
     <string name="forget_password">Forget Password</string>
     <string name="username">username</string>
     <string name="password">password</string>
+    <string name="delete_selected">Delete Selected</string>
+    <string name="update_selected">Update Selected</string>
 </resources>
