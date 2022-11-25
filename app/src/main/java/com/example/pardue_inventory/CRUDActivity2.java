@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class CRUDActivity2 extends AppCompatActivity {
 
@@ -50,7 +48,7 @@ public class CRUDActivity2 extends AppCompatActivity {
                     startActivity(delete);
                     break;
                 case R.id.Logout:
-                    Intent logout = new Intent(CRUDActivity2.this, MainActivity.class);
+                    Intent logout = new Intent(CRUDActivity2.this, MainLogin.class);
                     startActivity(logout);
                     break;
             }
