@@ -2,7 +2,6 @@ package com.example.pardue_inventory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +23,7 @@ public class GridActivity3 extends AppCompatActivity {
         backView.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GridActivity3.this, CRUDActivity2.class);
+                Intent intent = new Intent(GridActivity3.this, CRUDmenu.class);
                 startActivity(intent);
             }
         });

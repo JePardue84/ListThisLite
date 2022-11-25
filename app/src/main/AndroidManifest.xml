@@ -12,13 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".MainLogin"
             android:exported="false">
@@ -27,7 +21,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".UpdateActivity2"
+            android:name=".Update"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -41,14 +35,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddActivity2"
+            android:name=".Add"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PermissionActivity4"
+            android:name=".SMSPermission"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -62,7 +56,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CRUDActivity2"
+            android:name=".CRUDmenu"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

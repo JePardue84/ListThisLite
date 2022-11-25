@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.GridView;
 
 public class DeleteActivity2 extends AppCompatActivity {
@@ -46,7 +45,7 @@ public class DeleteActivity2 extends AppCompatActivity {
                     startActivity(delete);
                     break;
                 case R.id.Backview:
-                    Intent back = new Intent(DeleteActivity2.this, CRUDActivity2.class);
+                    Intent back = new Intent(DeleteActivity2.this, CRUDmenu.class);
                     startActivity(back);
                     break;
 

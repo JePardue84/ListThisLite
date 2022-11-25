@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class PermissionActivity4 extends AppCompatActivity {
+public class SMSPermission extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_permission4);
+        setContentView(R.layout.smspermission);
 
         defineButtons();
     }
@@ -28,11 +28,11 @@ public class PermissionActivity4 extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.Deny:
-                    Intent look = new Intent(PermissionActivity4.this, CRUDActivity2.class);
+                    Intent look = new Intent(SMSPermission.this, CRUDmenu.class);
                     startActivity(look);
                     break;
                 case R.id.Allow:
-                    Intent logout = new Intent(PermissionActivity4.this, CRUDActivity2.class);
+                    Intent logout = new Intent(SMSPermission.this, CRUDmenu.class);
                     startActivity(logout);
                     break;
             }

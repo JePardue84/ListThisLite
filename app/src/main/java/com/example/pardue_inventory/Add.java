@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 
-public class AddActivity2 extends AppCompatActivity {
+public class Add extends AppCompatActivity {
 
     private Button backView;
     GridView gridview;
@@ -19,12 +19,12 @@ public class AddActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add2);
+        setContentView(R.layout.add);
         backView = findViewById(R.id.Backview);
         backView.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddActivity2.this, CRUDActivity2.class);
+                Intent intent = new Intent(Add.this, CRUDmenu.class);
                 startActivity(intent);
             }
         });

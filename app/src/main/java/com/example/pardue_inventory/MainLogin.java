@@ -13,6 +13,7 @@ public class MainLogin extends AppCompatActivity {
 
     EditText username, password;
     Button btnlogin;
+    Button btnsignin;
     DBHelper DB;
 
     @Override
@@ -22,6 +23,7 @@ public class MainLogin extends AppCompatActivity {
         username = (EditText) findViewById(R.id.username1);
         password = (EditText) findViewById(R.id.password1);
         btnlogin = (Button) findViewById(R.id.btnsignin1);
+        btnsignin = (Button) findViewById(R.id.SignUp);
         DB = new DBHelper(this);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +38,20 @@ public class MainLogin extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if (checkuserpass == true) {
                         Toast.makeText(MainLogin.this, "Sign in successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), CRUDActivity2.class);
+                        Intent intent = new Intent(getApplicationContext(), SMSPermission.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainLogin.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        btnsignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(intent);
             }
         });
     }
