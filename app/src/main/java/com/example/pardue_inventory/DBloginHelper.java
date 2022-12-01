@@ -5,17 +5,22 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import androidx.annotation.Nullable;
 
-public class DBHelper extends SQLiteOpenHelper {
-    public static final String DBNAME = "Login.db";
-    public DBHelper(Context context) {
+public class DBloginHelper extends SQLiteOpenHelper {
+    private static final String DBNAME = "Login.db";
+
+
+    public DBloginHelper(Context context) {
+
         super(context, "Login.db", null, 1);
+
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
+
     }
 
     @Override
@@ -51,4 +56,6 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
+
 }

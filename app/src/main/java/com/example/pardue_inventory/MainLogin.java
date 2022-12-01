@@ -14,7 +14,7 @@ public class MainLogin extends AppCompatActivity {
     EditText username, password;
     Button btnlogin;
     Button btnsignin;
-    DBHelper DB;
+    DBloginHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainLogin extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password1);
         btnlogin = (Button) findViewById(R.id.btnsignin1);
         btnsignin = (Button) findViewById(R.id.SignUp);
-        DB = new DBHelper(this);
+        DB = new DBloginHelper(this);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

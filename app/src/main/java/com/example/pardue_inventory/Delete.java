@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
-public class DeleteActivity2 extends AppCompatActivity {
+public class Delete extends AppCompatActivity {
 
     GridView gridview;
     String[] number = new String[200];
@@ -22,7 +22,7 @@ public class DeleteActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete2);
+        setContentView(R.layout.delete);
         defineButtons();
 
         for (int i = 0; i < number.length; i++) {
@@ -41,11 +41,11 @@ public class DeleteActivity2 extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.deleteButton:
-                    Intent delete = new Intent(DeleteActivity2.this, DeleteActivity2.class);
+                    Intent delete = new Intent(Delete.this, Delete.class);
                     startActivity(delete);
                     break;
                 case R.id.Backview:
-                    Intent back = new Intent(DeleteActivity2.this, CRUDmenu.class);
+                    Intent back = new Intent(Delete.this, CRUDmenu.class);
                     startActivity(back);
                     break;
 

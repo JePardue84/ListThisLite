@@ -14,7 +14,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     EditText username, password, rePassword;
     Button register, existing;
-    DBHelper DB;
+    DBloginHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
         rePassword = findViewById(R.id.rePassword);
         register = findViewById(R.id.Register);
         existing = findViewById(R.id.Existing);
-        DB = new DBHelper(this);
+        DB = new DBloginHelper(this);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

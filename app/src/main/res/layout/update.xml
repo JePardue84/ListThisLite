@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".GridActivity3">
+    tools:context=".ViewInventory">
 
     <Button
         android:id="@+id/Backview"
@@ -26,6 +26,8 @@
         android:layout_width="371dp"
         android:layout_height="546dp"
         android:numColumns="3"
+        android:paddingLeft="40dp"
+        android:paddingRight="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
