@@ -47,14 +47,16 @@ public class DBmenuHelper extends SQLiteOpenHelper{
             return true;
         }
     }
-    public Boolean updateitemdata(String name, String supplier, String details)
+    public Boolean updateData(String id, String name, String supplier)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("supplier", supplier);
-        Cursor cursor = DB.rawQuery("Select * from Itemdetails where name = ?", new String[]{name});
+        contentValues.put(COL_1, id);
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, supplier);
+        Cursor cursor = DB.rawQuery("Select * from item_table where ID = ?", new String[]{id});
         if (cursor.getCount() > 0) {
-            long result = DB.update("Itemdetails", contentValues, "name=?", new String[]{name});
+            long result = DB.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
             //verifies if data is added or not
             if (result == -1) {
                 return false;

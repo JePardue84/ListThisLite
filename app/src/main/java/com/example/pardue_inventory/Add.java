@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class Add extends AppCompatActivity {
 
     DBmenuHelper myDb;
-    private Button ViewInventory, btnAddData;
+    private Button ViewInventory, btnAddData, MenuBack;
     private EditText editName, editSupplier;
 
     @Override
@@ -24,19 +24,42 @@ public class Add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
         myDb = new DBmenuHelper(this);
-
         editName = (EditText) findViewById(R.id.ItemLine1);
         editSupplier = (EditText) findViewById(R.id.ItemLine2);
         btnAddData = (Button) findViewById(R.id.button_add);
         ViewInventory =(Button) findViewById(R.id.viewInventory);
+        MenuBack =(Button) findViewById(R.id.menuBack);
         AddData();
-        ViewInventory();
-        ViewInventory.setOnClickListener(new android.view.View.OnClickListener()
 
-        {
+
+
+        ViewInventory.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View view){
-                Intent intent = new Intent(Add.this, ViewInventory.class);
+            public void onClick(View view) {
+                Cursor cursor = myDb.getAlldata();
+                if(cursor.getCount()==0){
+                    Toast.makeText(Add.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while(cursor.moveToNext()){
+                    buffer.append("Id :"+cursor.getString(0)+"\n");
+                    buffer.append("Name :"+cursor.getString(1)+"\n");
+                    buffer.append("Supplier :"+cursor.getString(2)+"\n\n");
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Add.this);
+                builder.setCancelable(true);
+                builder.setTitle("Inventory Items");
+                builder.setMessage(buffer.toString());
+                builder.show();
+            }
+        });
+
+        MenuBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CRUDmenu.class);
                 startActivity(intent);
             }
         });
@@ -64,50 +87,10 @@ public class Add extends AppCompatActivity {
         );
 
 
-        ViewInventory.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Add.this, ViewInventory.class);
-                startActivity(intent);
-            }
-        });
+        }
 
 
-    }
 
-    public void ViewInventory() {
-        ViewInventory.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Cursor cursor = myDb.getAlldata();
-                        if (cursor.getCount() == 0) {
-                            //show message
-                            showMessage("Error", "No Items Found");
-                            return;
 
-                        }
-
-                        StringBuffer buffer = new StringBuffer();
-                        while (cursor.moveToNext()) {
-                            buffer.append("Name :" + cursor.getString(0) + "\n");
-                            buffer.append("Supplier :" + cursor.getString(1) + "\n\n");
-
-                        }
-
-                        //Show all data
-                        showMessage("Item", buffer.toString());
-                    }
-                }
-        );
-    }
-
-    public void showMessage(String title, String Message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(Message);
-        builder.show();
-    }
 
 }
