@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ViewInventory">
+    tools:context=".Delete">
 
     <Button
         android:id="@+id/Backview"
         android:layout_width="173dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/teal_200"
         android:text="@string/back_to_menu"
         android:textColor="#285D67"
@@ -20,6 +20,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonViewALL"
+        android:layout_width="316dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_crud"
+        android:text="View Inventory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.412"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/deleteButton"

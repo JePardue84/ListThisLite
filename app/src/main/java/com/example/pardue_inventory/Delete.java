@@ -1,8 +1,10 @@
 package com.example.pardue_inventory;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,7 +16,7 @@ import android.widget.Toast;
 public class Delete extends AppCompatActivity {
 
     DBmenuHelper db;
-    private Button delete, back;
+    private Button delete, back, view;
     private EditText id;
 
     @Override
@@ -25,6 +27,7 @@ public class Delete extends AppCompatActivity {
         id = (EditText) findViewById(R.id.editTextID);
         db = new DBmenuHelper(this);
         back = (Button) findViewById(R.id.Backview);
+        view = (Button) findViewById(R.id.buttonViewALL);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +52,30 @@ public class Delete extends AppCompatActivity {
 
 
         );
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cursor cursor = db.getAlldata();
+                if(cursor.getCount()==0){
+                    Toast.makeText(Delete.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while(cursor.moveToNext()){
+                    buffer.append("Id :"+cursor.getString(0)+"\n");
+                    buffer.append("Name :"+cursor.getString(1)+"\n");
+                    buffer.append("Supplier :"+cursor.getString(2)+"\n\n");
+                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Delete.this);
+                builder.setCancelable(true);
+                builder.setTitle("Inventory Items");
+                builder.setMessage(buffer.toString());
+                builder.show();
+            }
+        });
+
 
     }
 

@@ -24,18 +24,17 @@
 
     <TextView
         android:id="@+id/SignIn"
-        android:layout_width="398dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="164dp"
+        android:layout_width="309dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="212dp"
         android:fontFamily="serif"
         android:text="Sign Up"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="#285D67"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +63,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/SignIn"
-        app:layout_constraintVertical_bias="0.152"
+        app:layout_constraintVertical_bias="0.108"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
@@ -92,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582"
+        app:layout_constraintVertical_bias="0.566"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -137,7 +136,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/SignIn"
-        app:layout_constraintVertical_bias="0.303"
+        app:layout_constraintVertical_bias="0.24"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
