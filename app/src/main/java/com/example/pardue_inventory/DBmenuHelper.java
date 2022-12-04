@@ -54,18 +54,9 @@ public class DBmenuHelper extends SQLiteOpenHelper{
         contentValues.put(COL_1, id);
         contentValues.put(COL_2, name);
         contentValues.put(COL_3, supplier);
-        Cursor cursor = DB.rawQuery("Select * from item_table where ID = ?", new String[]{id});
-        if (cursor.getCount() > 0) {
-            long result = DB.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
-            //verifies if data is added or not
-            if (result == -1) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
+        DB.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
+        return true;
+
     }
 
     public Integer deleteData(String id)
