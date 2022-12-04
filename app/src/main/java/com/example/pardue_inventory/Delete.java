@@ -6,53 +6,57 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.Toast;
 
 public class Delete extends AppCompatActivity {
 
-    GridView gridview;
-    String[] number = new String[200];
-
-    private void defineButtons() {
-
-        findViewById(R.id.deleteButton).setOnClickListener(buttonClickListener);
-        findViewById(R.id.Backview).setOnClickListener(buttonClickListener);
-    }
+    DBmenuHelper db;
+    private Button delete, back;
+    private EditText id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete);
-        defineButtons();
+        delete = (Button) findViewById(R.id.deleteButton);
+        id = (EditText) findViewById(R.id.editTextID);
+        db = new DBmenuHelper(this);
+        back = (Button) findViewById(R.id.Backview);
 
-        for (int i = 0; i < number.length; i++) {
-            number[i] = " Item " + i;
-
-        }
-
-        gridview = (GridView) findViewById(R.id.gridView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_selectable_list_item, number);
-        gridview.setAdapter(adapter);
-
-        };
-
-    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.deleteButton:
-                    Intent delete = new Intent(Delete.this, Delete.class);
-                    startActivity(delete);
-                    break;
-                case R.id.Backview:
-                    Intent back = new Intent(Delete.this, CRUDmenu.class);
-                    startActivity(back);
-                    break;
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CRUDmenu.class);
+                startActivity(intent);
             }
+        });
 
-        }
+        delete.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Integer deletedRows = db.deleteData(id.getText().toString());
+                        //verifies if deleted successfully.
+                        if (deletedRows > 0)
+                            Toast.makeText(Delete.this, "Data Deleted", Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(Delete.this, "Data Not Deleted", Toast.LENGTH_LONG).show();
+                    }
+                }
 
 
-    };
+        );
+
+    }
+
+
+
 }
+
+
+
+
+

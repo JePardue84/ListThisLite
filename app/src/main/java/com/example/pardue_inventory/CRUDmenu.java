@@ -26,6 +26,7 @@ public class CRUDmenu extends AppCompatActivity {
 
         addInventory = (Button) findViewById(R.id.AddInventory);
         logout = (Button) findViewById(R.id.Logout);
+        deleteInventory = (Button) findViewById(R.id.DeleteInventory);
         view = (Button) findViewById(R.id.buttonViewALL);
         addInventory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +38,12 @@ public class CRUDmenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 logout();
+            }
+        });
+        deleteInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete();
             }
         });
 
@@ -71,6 +78,11 @@ public class CRUDmenu extends AppCompatActivity {
 
     public void logout() {
         Intent intent = new Intent(this, MainLogin.class);
+        startActivity(intent);
+    }
+
+    public void delete() {
+        Intent intent = new Intent(this, Delete.class);
         startActivity(intent);
     }
 

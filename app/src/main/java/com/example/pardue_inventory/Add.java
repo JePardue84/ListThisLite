@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -76,10 +77,16 @@ public class Add extends AppCompatActivity {
                                 editSupplier.getText().toString());
 
                         //verifies if added successfully.
-                        if (isInserted = true)
-                            Toast.makeText(Add.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(Add.this, "Data not Inserted", Toast.LENGTH_LONG).show();
+                        Toast toast;
+                        if (isInserted = true) {
+                           toast = Toast.makeText(Add.this, "Data Inserted", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.BOTTOM, 200, 200);
+                            toast.show();
+                        } else {
+                            toast = Toast.makeText(Add.this, "Data NOT Inserted", Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                        }
+
                     }
                 }
 

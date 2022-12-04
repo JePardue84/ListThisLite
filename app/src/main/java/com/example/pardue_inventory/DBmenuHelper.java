@@ -67,20 +67,12 @@ public class DBmenuHelper extends SQLiteOpenHelper{
             return false;
         }
     }
-    public Boolean deleteitemdata(String name)
+
+    public Integer deleteData(String id)
     {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("Select * from Itemdetails where name = ?", new String[]{name});
-        if (cursor.getCount() > 0) {
-            long result = DB.delete("Itemdetails", "name=?", new String[]{name});
-            if (result == -1) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "ID = ?", new String[]{id});
+
     }
 
     public Cursor getAlldata ()
