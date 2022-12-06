@@ -80,11 +80,12 @@ public class Add extends AppCompatActivity {
                         Toast toast;
                         if (isInserted = true) {
                            toast = Toast.makeText(Add.this, "Data Inserted", Toast.LENGTH_SHORT);
-                            toast.setGravity(Gravity.BOTTOM, 200, 200);
+                            toast.setGravity(Gravity.TOP, 0, 150);
                             toast.show();
                         } else {
                             toast = Toast.makeText(Add.this, "Data NOT Inserted", Toast.LENGTH_LONG);
-                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.setGravity(Gravity.TOP, 0, 150);
+                            toast.show();
                         }
 
                     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pardue_Inventory</string>
+    <string name="app_name">List This!</string>
     <string name="create">Create</string>
     <string name="login">Login</string>
     <string name="log_out">Log Out</string>

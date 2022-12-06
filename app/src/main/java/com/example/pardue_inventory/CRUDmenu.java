@@ -2,13 +2,21 @@ package com.example.pardue_inventory;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CRUDmenu extends AppCompatActivity {
@@ -71,13 +79,23 @@ public class CRUDmenu extends AppCompatActivity {
                     buffer.append("Supplier :"+cursor.getString(2)+"\n\n");
                 }
 
+
+                //Displays Inventory in respective format
                 AlertDialog.Builder builder = new AlertDialog.Builder(CRUDmenu.this);
                 builder.setCancelable(true);
                 builder.setTitle("Inventory Items");
                 builder.setMessage(buffer.toString());
                 builder.show();
+
+
             }
         });
+
+
+        //SMS permissions to alert when inventory gets low
+                ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.SEND_SMS},
+                PackageManager.PERMISSION_GRANTED);
     }
 
     public void openAdd() {

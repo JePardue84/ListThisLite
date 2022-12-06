@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -43,11 +44,17 @@ public class Delete extends AppCompatActivity {
                     public void onClick(View view) {
                         Integer deletedRows = db.deleteData(id.getText().toString());
                         //verifies if deleted successfully.
-                        if (deletedRows > 0)
-                            Toast.makeText(Delete.this, "Data Deleted", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(Delete.this, "Data Not Deleted", Toast.LENGTH_LONG).show();
+                        Toast toast;
+                        if (deletedRows > 0) {
+                            toast = Toast.makeText(Delete.this, "Data Deleted", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.TOP, 0, 150);
+                            toast.show();
+                        }else{
+                            toast = Toast.makeText(Delete.this, "Data Not Deleted", Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.TOP, 0, 150);
+                            toast.show();
                     }
+                }
                 }
 
 
