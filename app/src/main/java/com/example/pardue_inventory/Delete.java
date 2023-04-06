@@ -37,7 +37,7 @@ public class Delete extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //delete button logic
         delete.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -59,7 +59,7 @@ public class Delete extends AppCompatActivity {
 
 
         );
-
+        //view button logic to view database items
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

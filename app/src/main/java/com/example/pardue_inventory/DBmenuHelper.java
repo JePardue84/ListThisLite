@@ -18,6 +18,7 @@ public class DBmenuHelper extends SQLiteOpenHelper{
     public static final String COL_2 = "NAME";
     public static final String COL_3 = "SUPPLIER";
 
+
     public DBmenuHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -72,4 +73,5 @@ public class DBmenuHelper extends SQLiteOpenHelper{
         Cursor cursor = db.rawQuery("Select * from "+TABLE_NAME, null);
         return cursor;
     }
+
 }

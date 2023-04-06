@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class CRUDmenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crudmenu);
+
 
         DB = new DBmenuHelper(this);
 
@@ -71,7 +73,10 @@ public class CRUDmenu extends AppCompatActivity {
                 if(cursor.getCount()==0){
                     Toast.makeText(CRUDmenu.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
                     return;
+
                 }
+
+
                 StringBuffer buffer = new StringBuffer();
                 while(cursor.moveToNext()){
                     buffer.append("Id :"+cursor.getString(0)+"\n");
@@ -96,7 +101,11 @@ public class CRUDmenu extends AppCompatActivity {
                 ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.SEND_SMS},
                 PackageManager.PERMISSION_GRANTED);
+
+
     }
+
+
 
     public void openAdd() {
         Intent intent = new Intent(this, Add.class);

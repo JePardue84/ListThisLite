@@ -33,7 +33,7 @@ public class Add extends AppCompatActivity {
         AddData();
 
 
-
+        //view added database entries
         ViewInventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
